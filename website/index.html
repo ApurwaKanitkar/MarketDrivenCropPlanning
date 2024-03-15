@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analytics</title>
+</head>
+<body>
+    <h1>Data Analytics</h1>
+    <form method="post">
+        <label for="user_data">Enter data (comma-separated):</label>
+        <input type="text" id="user_data" name="user_data">
+        <button type="submit">Analyze</button>
+    </form>
+    {% if visualization %}
+        {{ visualization|safe }}
+    {% endif %}
+</body>
+</html>
