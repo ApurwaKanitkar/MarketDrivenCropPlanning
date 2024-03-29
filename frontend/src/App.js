@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
+import Navbar from "./Navbar";
 
 const App = () => {
   const ref = useRef(null);
   console.log(ref);
   return (
     <div>
+ 
       <h2 className=" text-3xl">Rice Area Over Time in Gwalior</h2>
       <input
         ref={ref}

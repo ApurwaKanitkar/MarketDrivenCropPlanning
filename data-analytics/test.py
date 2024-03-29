@@ -9,10 +9,10 @@ app = Flask(__name__)
 @app.route('/plot')
 def serve_plot():
     # Replace with your actual data
-    data1 = {"Year": [2010, 2011, 2012], "RICE AREA (1000 ha)": [10, 12, 15]}
-    fig1 = plot.create_plot1(data1)
+    # data1 = {"Year": [2010, 2011, 2012], "RICE AREA (1000 ha)": [10, 12, 15]}
+    # fig1 = plot.create_plot1(data1)
 
-    data2 = {"Year": [2010, 2011, 2012], "RICE PRODUCTION (1000 tons)": [600, 100, 1200], "WHEAT PRODUCTION (1000 tons)": [100, 1000, 1200],"MAIZE PRODUCTION (1000 tons)": [500, 1000, 1200]}
+    data2 = {"Year": [2010, 2011, 2012, 2013], "RICE PRODUCTION (1000 tons)": [600, 100, 1200, 2000], "WHEAT PRODUCTION (1000 tons)": [100, 1000, 1200, 2000],"MAIZE PRODUCTION (1000 tons)": [500, 1000, 1200, 2000]}
     fig2 = plot.create_plot2(data2)
 
     img = BytesIO()
