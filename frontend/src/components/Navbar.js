@@ -8,9 +8,9 @@ function Navbar() {
 
   return (
     <div>
-      <div className="bg-green-500 flex sticky">
+      <div className="flex sticky">
         <img className="h-10 w-10 m-5" src={logo} />
-        <nav className="absolute top-0 right-0 m-5 gap-5 text-white">
+        <nav className="absolute top-0 right-0 m-5 gap-5 text-black">
           <Link to="/Web" className="m-5 transition duration-0.3 hover:text-yellow-700">
             Home
           </Link>
