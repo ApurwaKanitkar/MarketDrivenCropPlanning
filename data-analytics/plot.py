@@ -15,8 +15,8 @@ def create_plot1(data1):
     return plt
 
 def create_plot2(data2):
-
-    #graph2
+    #graph 2
+    Gwalior_df = data2
     plt.figure(figsize=(10, 6))
     plt.plot(Gwalior_df['Year'], Gwalior_df['RICE PRODUCTION (1000 tons)'], marker='o', linestyle='-', color='b', label='Rice Production')
     plt.plot(Gwalior_df['Year'], Gwalior_df['WHEAT PRODUCTION (1000 tons)'], marker='o', linestyle='-', color='r', label='Wheat Production')
@@ -24,7 +24,7 @@ def create_plot2(data2):
 
     plt.title('Crop Production Over Time in Gwalior')
     plt.xlabel('Year')
-    plt.ylabel('Production (1000 tons)')
+    plt.ylabel('Rice Production (1000 tons)')
     plt.grid(True)
 
     return plt
