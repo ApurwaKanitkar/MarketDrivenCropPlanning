@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <Navbar />
       <Filter />
+      <img src="http://localhost:5000/plot" alt="plot"></img>
     </div>
   );
 };
