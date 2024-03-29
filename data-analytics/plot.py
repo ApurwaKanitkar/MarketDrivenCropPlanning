@@ -12,6 +12,8 @@ def create_plot1(data1):
     plt.ylabel('RICE AREA (1000 ha)')
     plt.grid(True)
 
+    
+
     return plt
 
 def create_plot2(data2):
