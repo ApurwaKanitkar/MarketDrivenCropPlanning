@@ -6,7 +6,7 @@ import plot
 
 app = Flask(__name__)
 
-@app.route('/plot/<int:year>')
+@app.route('/plot')
 def serve_plot():
     # Replace with your actual data
     # data1 = {"Year": [2010, 2011, 2012], "RICE AREA (1000 ha)": [10, 12, 15]}

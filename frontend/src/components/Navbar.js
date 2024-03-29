@@ -1,15 +1,35 @@
 import React from "react";
+import {
+  Link,
+} from "react-router-dom";
+import logo from "../images/logo.svg"
 
-const Navbar = () => {
+function Navbar() {
+
   return (
-    <div className="flex h-[75px] bg-green-500 ">
-      <img src="" alt="logo" className="p-2 mt-3"></img>
-      <ul className="flex p-2  ml-[350px] mt-3">
-        <li>Home</li>
-        <li className="ml-[150px]">Chat-bot</li>
-      </ul>
+    <div>
+      <div className="bg-green-500 flex sticky">
+        <img className="h-10 w-10 m-5" src={logo} />
+        <nav className="absolute top-0 right-0 m-5 gap-5 text-white">
+          <Link to="/Web" className="m-5 transition duration-0.3 hover:text-yellow-700">
+            Home
+          </Link>
+          <Link to="/Services" className="m-5 transition duration-0.3 hover:text-yellow-700">
+            Services
+          </Link>
+          <Link to="/Testimonials" className="m-5 transition duration-0.3 hover:text-yellow-700">
+            Testimonials
+          </Link>
+          <Link to="/Vision" className="m-5 transition duration-0.3 hover:text-yellow-700">
+            Our Vision
+          </Link>
+          <Link to="/Contact" className="m-5 transition duration-0.3 hover:text-yellow-700">
+            Contact Us
+          </Link>
+        </nav>
+      </div>
     </div>
   );
-};
+}
 
 export default Navbar;
