@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+function App() {
   return (
     <div>
-      <h2 className=" text-3xl">Rice Area Over Time in Gwalior</h2>
-      <img src="http://localhost:5000/plot" alt="Plot" />
+      <h1>Recommendations</h1>
+      <Link to="http://localhost:8501">Get Crop Combinations</Link>
     </div>
   );
-};
+}
 
-export default Home;
+export default App;
