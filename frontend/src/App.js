@@ -13,7 +13,7 @@ import { Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <>
-       <div className='h-screen w-screen overflow-x-scroll no-scrollbar'>
+       <div className='h-screen w-screen bg-green-300 overflow-x-scroll overflow-y-scroll no-scrollbar'>
         <Router>
           <Navbar />
           <Routes>

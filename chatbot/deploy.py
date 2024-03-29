@@ -1,3 +1,4 @@
+# Flask Application
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -56,6 +57,13 @@ if __name__ == '__main__':
     load_dotenv()
     embeddings = OpenAIEmbeddings(openai_api_key='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')
     with open('C:\\Users\\ajitk\\Documents\\Apurwa\\PICT\\ExtraCoCurricular\\Tech\\TechFiesta\\MarketDrivenCropPlanning\\chatbot\\Rice.pdf', 'rb') as f:
+        raw_text = get_pdf_text([f])
+    text_chunks = get_text_chunks(raw_text)
+    vectorstore = get_vectorstore(text_chunks)
+    app.run(port=5000, debug=True)
+
+    embeddings = OpenAIEmbeddings(openai_api_key='prems api')
+    with open('D:\MarketDrivenCropPlanning\chatbot\wheat.pdf', 'rb') as f:
         raw_text = get_pdf_text([f])
     text_chunks = get_text_chunks(raw_text)
     vectorstore = get_vectorstore(text_chunks)
