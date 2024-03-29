@@ -10,7 +10,7 @@ from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 
-embeddings = OpenAIEmbeddings(openai_api_key='prems key')
+embeddings = OpenAIEmbeddings(openai_api_key='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')
 
 def get_pdf_text(pdf_docs):
     text = ""
