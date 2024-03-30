@@ -13,11 +13,11 @@ import { Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
     <>
-       <div className='h-screen w-screen bg-green-300 overflow-x-scroll overflow-y-scroll no-scrollbar'>
+       <div className='h-screen w-screen overflow-x-scroll overflow-y-scroll no-scrollbar'>
         <Router>
           <Navbar />
           <Routes>
-            <Route exact path="/web" element={<Home />}></Route>
+            <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/Vision" element={<Vision />}></Route>
             <Route exact path="/Services" element={<Services />}></Route>
             <Route exact path="/Contact" element={<Contact />}></Route>

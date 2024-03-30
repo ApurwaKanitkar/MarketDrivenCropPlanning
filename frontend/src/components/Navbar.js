@@ -2,29 +2,28 @@ import React from "react";
 import {
   Link,
 } from "react-router-dom";
-import logo from "../images/chatbot-logo.svg"
+import logo from "../images/eco.gif"
 
 function Navbar() {
 
   return (
-    <div>
-      <div className="flex sticky">
-        <img className="h-10 w-10 m-5" src={logo} />
-        <nav className="absolute top-0 right-0 m-5 gap-5 text-black">
-          <Link to="/Web" className="m-5 transition duration-0.3 hover:text-yellow-700">
-            Home
+    <div className="flex">
+      
+      <img className="rounded-full w-24 ml-8" src={logo}></img>
+      <h1 className="gilroy-bold text-3xl mt-12 ml-2">Agro-help</h1>
+      <div className="w-66 ml-40 sticky">
+        <nav className="text-center ml-80 mt-10 gap-15 text-black">
+          <Link to="/" className=" m-5 ">
+           <button className="gilroy-semibold text-lg hover:border-b-4 hover:border-yellow-500 duration-200 hover:text-black">Home</button> 
           </Link>
-          <Link to="/Services" className="m-5 transition duration-0.3 hover:text-yellow-700">
-            Services
+          <Link to="/Services" className=" m-5">
+           <button className="gilroy-semibold text-lg hover:border-b-4 hover:border-yellow-500 duration-200 hover:text-black">Services</button> 
           </Link>
-          <Link to="/Testimonials" className="m-5 transition duration-0.3 hover:text-yellow-700">
-            Testimonials
+          <Link to="/Vision" className=" m-5 ">
+           <button className="gilroy-semibold text-lg hover:border-b-4 hover:border-yellow-500 duration-200 hover:text-black">Vision</button> 
           </Link>
-          <Link to="/Vision" className="m-5 transition duration-0.3 hover:text-yellow-700">
-            Our Vision
-          </Link>
-          <Link to="/Contact" className="m-5 transition duration-0.3 hover:text-yellow-700">
-            Contact Us
+          <Link to="/Contact" className=" m-5 ">
+           <button className="gilroy-semibold text-lg hover:border-b-4 hover:border-yellow-500 duration-200 hover:text-black">Contact Us</button> 
           </Link>
         </nav>
       </div>

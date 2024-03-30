@@ -1,8 +1,11 @@
 import React from 'react'
+import VideoContainer from "./VideoContainer";
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <VideoContainer />
+    </div>
   )
 }
 
