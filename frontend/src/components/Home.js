@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import React from 'react';
 
-const Home = () => {
+function Home() {
   return (
     <div>
-      <h2 className=" text-3xl">Rice Area Over Time in Gwalior</h2>
-      <img src="http://localhost:5000/plot" alt="Plot" />
+      <h1>My React App</h1>
+      <p>This is my React.js application.</p>
+      <a href="http:\\localhost:8501">Go to Streamlit page</a>
     </div>
   );
-};
+}
 
 export default Home;

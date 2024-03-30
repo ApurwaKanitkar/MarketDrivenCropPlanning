@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Assuming your CSV is named 'data.csv'
-df = pd.read_csv('C:\\Users\\ajitk\\Documents\\Apurwa\\PICT\\ExtraCoCurricular\\Tech\\TechFiesta\\MarketDrivenCropPlanning\\data-analytics\\dataset\\Cleaned_dataset.csv')
-access_df = pd.read_csv('C:\\Users\\ajitk\\Documents\\Apurwa\\PICT\\ExtraCoCurricular\\Tech\\TechFiesta\\MarketDrivenCropPlanning\\data-analytics\\dataset\\render1.csv')  # Assuming your access data CSV is named 'access.csv'
+df = pd.read_csv('Cleaned_dataset.csv')
+access_df = pd.read_csv('render1.csv')  # Assuming your access data CSV is named 'access.csv'
 
 district_options = list(df['Dist Name'].unique())
 selected_district = st.selectbox("Select District:", ['Please select']+district_options)
