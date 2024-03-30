@@ -1,13 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from flask import Flask, request, jsonify
-import io
-import base64
-
-app = Flask(__name__)
-
-df = pd.read_csv('C:\\Users\\ajitk\\Documents\\Apurwa\\PICT\\ExtraCoCurricular\\Tech\\TechFiesta\\MarketDrivenCropPlanning\\data-analytics\\dataset\\Cleaned_dataset.csv')
-access_df = pd.read_csv('C:\\Users\\ajitk\\Documents\\Apurwa\\PICT\\ExtraCoCurricular\\Tech\\TechFiesta\\MarketDrivenCropPlanning\\data-analytics\\dataset\\render1.csv')
+df = pd.read_csv('Cleaned_dataset.csv')
+access_df = pd.read_csv('render1.csv')
 
 def give_final(dist):
     global combo1crop1, combo1crop2, combo2crop1, combo2crop2
@@ -19,7 +13,8 @@ def give_final(dist):
     print("Combination 1:",combo1crop1,"&",combo1crop2)
     print("Combination 2:",combo2crop1,"&",combo2crop2)
     return combo1crop1, combo1crop2, combo2crop1, combo2crop2
-
+dist = input("Enter district:")
+give_final(dist)
 
 def yield_kg(combo1crop1, combo1crop2, combo2crop1, combo2crop2):
     dist_df = df[df['Dist Name'] == dist]
@@ -78,30 +73,3 @@ def price(combo1crop1, combo1crop2, combo2crop1, combo2crop2):
     plt.subplots_adjust(left=0.12, right=0.9, top=0.9, bottom=0.1)
     plt.show()
 price(combo1crop1, combo1crop2, combo2crop1, combo2crop2)
-
-
-@app.route('/api/crop-analysis', methods=['POST'])
-def crop_analysis():
-    district = request.json.get('district')
-    if not district:
-        return jsonify({'error': 'Distric is required'}), 400
-    combo1crop1, combo1crop2, combo2crop1, combo2crop2 = give_final(district)
-
-    # Generate yield plot
-    img_data = io.BytesIO()
-    yield_img = yield_kg(combo1crop1, combo1crop2, combo2crop1, combo2crop2)
-    plt.savefig(img_data, format='png')
-    img_data.seek(0)
-    yield_img_base64 = base64.b64encode(img_data.getvalue()).decode('utf-8')
-
-    # Generate price plot
-    img_data = io.BytesIO()
-    price_img = price(combo1crop1, combo1crop2, combo2crop1, combo2crop2)
-    plt.savefig(img_data, format='png')
-    img_data.seek(0)
-    price_img_base64 = base64.b64encode(img_data.getvalue()).decode('utf-8')
-
-    return jsonify({'yield_img': yield_img_base64, 'price_img': price_img_base64})
-
-if __name__ == '__main__':
-    app.run(debug=True)
