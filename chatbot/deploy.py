@@ -55,7 +55,7 @@ def ask():
 
 if __name__ == '__main__':
     load_dotenv()
-    embeddings = OpenAIEmbeddings(openai_api_key='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')
+    embeddings = OpenAIEmbeddings(openai_api_key='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')
     with open('D:\MarketDrivenCropPlanning\chatbot\wheat.pdf', 'rb') as f:
         raw_text = get_pdf_text([f])
     text_chunks = get_text_chunks(raw_text)
