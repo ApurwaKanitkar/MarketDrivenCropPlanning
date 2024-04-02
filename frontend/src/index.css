@@ -3,46 +3,89 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: gilroy-bold;
-    src: url("../public/Font-Gilroy/Gilroy-Bold.ttf");
+  font-family: gilroy-bold;
+  src: url("../public/Font-Gilroy/Gilroy-Bold.ttf");
 }
 
-.gilroy-bold{
-    font-family: gilroy-bold;
-}
-
-@font-face {
-    font-family: gilroy-semibold;
-    src: url("../public/Font-Gilroy/Gilroy-SemiBold.ttf");
-}
-
-.gilroy-semibold{
-    font-family: gilroy-semibold;
+.gilroy-bold {
+  font-family: gilroy-bold;
 }
 
 @font-face {
-    font-family: gilroy-regular;
-    src: url("../public/Font-Gilroy/Gilroy-Regular.ttf");
+  font-family: gilroy-semibold;
+  src: url("../public/Font-Gilroy/Gilroy-SemiBold.ttf");
 }
 
-.gilroy-regular{
-    font-family: gilroy-regular;
+.gilroy-semibold {
+  font-family: gilroy-semibold;
 }
 
 @font-face {
-    font-family: gilroy-medium;
-    src: url("../public/Font-Gilroy/Gilroy-Medium.ttf");
+  font-family: gilroy-regular;
+  src: url("../public/Font-Gilroy/Gilroy-Regular.ttf");
 }
 
-.gilroy-medium{
-    font-family: gilroy-medium;
+.gilroy-regular {
+  font-family: gilroy-regular;
 }
 
-.no-scrollbar::-webkit-scrollbar{
-    display: none;
+@font-face {
+  font-family: gilroy-medium;
+  src: url("../public/Font-Gilroy/Gilroy-Medium.ttf");
 }
 
-.no-scrollbar{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.gilroy-medium {
+  font-family: gilroy-medium;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.Embed-container {
+  height: 500px;
+  width: 800px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
