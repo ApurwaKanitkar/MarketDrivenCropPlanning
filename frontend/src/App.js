@@ -1,28 +1,46 @@
-import React, { useRef, useState } from "react";
-import Navbar from "./components/Navbar";
+import React from "react";
 import Home from "./components/Home";
 import Vision from "./components/Vision";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Route, createRoutesFromElements } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
+import UserProfilePage from "./components/UserProfilePage";
+import SignInPage from "./components/LandingPage";
+import LandingPage from "./components/LandingPage";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route index element={<LandingPage />} />
+      <Route
+        path="/home"
+        element={
+          <>
+            <SignedIn>
+              <Home />
+            </SignedIn>
+
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        }
+      />
+      <Route path="/Vision" element={<Vision />} />
+      <Route path="/Services" element={<Services />} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/UserProfilePage" element={<UserProfilePage />} />
+    </>
+  )
+);
 const App = () => {
   return (
     <>
-      <div className="h-screen w-screen overflow-x-scroll overflow-y-scroll no-scrollbar">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/Vision" element={<Vision />}></Route>
-            <Route exact path="/Services" element={<Services />}></Route>
-            <Route exact path="/Contact" element={<Contact />}></Route>
-            <Route exact path="/Dashboard" element={<Dashboard />}></Route>
-          </Routes>
-        </Router>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 };
