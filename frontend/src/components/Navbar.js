@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/eco.gif";
+import { UserButton } from "@clerk/clerk-react";
 
 function Navbar() {
   return (
@@ -34,11 +35,9 @@ function Navbar() {
               Dashboard
             </button>
           </Link>
-          <Link to="/UserProfilePage" className=" m-5 ">
-            <button className="gilroy-semibold text-lg hover:border-b-4 hover:border-yellow-500 duration-200 hover:text-black">
-              Profile
-            </button>
-          </Link>
+          <span className="m-5">
+            <UserButton />
+          </span>
         </nav>
       </div>
     </div>

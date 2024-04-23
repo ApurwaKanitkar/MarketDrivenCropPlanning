@@ -1,15 +1,10 @@
 import React from "react";
 import orange from "../images/hero-gif.gif";
 import Navbar from "./Navbar";
-import { UserButton } from "@clerk/clerk-react";
 function Home() {
   return (
     <>
       <Navbar />
-      <div className="h-[200px] w-[200px]">
-        <UserButton />
-      </div>
-
       <div className="relative">
         <div className="flex-col">
           <div className="flex">
